@@ -6,17 +6,14 @@ $(document).ready(function(){
     var increment = parseInt($("#increment").val());
 
     $(".output").empty();
-    console.log(increment);
-
-    if (target === NaN || increment === NaN) {
+    // console.log(increment);
+    if (increment > target) {
+      $(".output").append("Your multiple is larger than your target!");
+    } else if (target === "NaN" || increment === "NaN") {
       $(".output").append("Please use numbers!");
-     }
-
-
-    for (var index = 0; index < (target + 1); index += increment) {
-
+    } else {for (var index = 0; index < (target + 1); index += increment) {
       $(".output").append(index + " ");
-    }
+    }}
 
 
   });
